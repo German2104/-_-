@@ -39,3 +39,24 @@ source .venv/bin/activate   # для Linux/Mac
 
 pip install -U pip
 pip install -U pandas scikit-learn tqdm datasets huggingface_hub
+```
+
+## Для изменения пути замените значение переменной path в ноутбуке на ваш файл 
+**в данной ячейке**
+```
+import pandas as pd
+
+path = "dataset_1937770_3.txt"
+
+df = pd.DataFrame(
+    [line.rstrip("\n").split(",", 1) 
+     for line in open(path, encoding="utf-8") 
+     if line.strip() and not line.lower().startswith("id,")],
+    columns=["id", "text_no_spaces"]
+)
+df["id"] = df["id"].astype(int)
+
+print(df.head())
+print(df.shape)
+```
+
