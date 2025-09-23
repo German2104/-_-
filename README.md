@@ -43,7 +43,7 @@ pip install -U pandas scikit-learn tqdm datasets huggingface_hub
 
 ## Для изменения пути замените значение переменной path в ноутбуке на ваш файл 
 **в данной ячейке**
-```
+```python
 import pandas as pd
 
 path = "dataset_1937770_3.txt"
